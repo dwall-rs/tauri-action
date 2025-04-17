@@ -21,6 +21,7 @@ class Runner {
 	}
 
 	async execTauriCommand(
+		command: string[],
 		commandOptions: string[],
 		cwd?: string,
 		env?: Record<string, string>,
@@ -33,6 +34,8 @@ class Runner {
 		}
 
 		args.push(...this.tauriScript);
+
+		args.push(...command);
 
 		if (this.bin === "npm" && commandOptions.length) {
 			args.push("--");

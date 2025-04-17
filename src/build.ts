@@ -65,6 +65,7 @@ export async function buildProject(
 	};
 
 	await runner.execTauriCommand(
+		[],
 		[...tauriArgs],
 		root,
 		targetInfo.platform === "macos"
